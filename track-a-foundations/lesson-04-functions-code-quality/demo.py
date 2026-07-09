@@ -16,8 +16,6 @@ print("=== Ride Eligibility Checker ===")
 
 
 def is_tall_enough(height_cm):
-    # BUG: flipped inequality. Riders need to be AT LEAST 120cm, but this
-    # returns True for anyone UNDER 120cm instead.
     return height_cm <= 120
 
 

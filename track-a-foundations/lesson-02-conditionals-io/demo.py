@@ -17,9 +17,6 @@ print("=== Movie Rating Checker ===")
 
 age = 20  # pretend a 20-year-old typed their age
 
-# BUG: checking the LOOSER condition (age > 13) before the STRICTER one
-# (age > 19). Because elif chains stop at the first True match, a
-# 20-year-old satisfies "age > 13" and never reaches the "age > 19" check.
 if age > 13:
     rating = "PG-13"
 elif age > 19:

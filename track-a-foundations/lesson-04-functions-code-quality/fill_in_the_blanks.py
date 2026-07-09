@@ -6,13 +6,13 @@ Goal: Wrap reusable logic in a function so it can run multiple times cleanly.
 print("=== Custom Greeting Engine ===")
 
 
-# ---- TASK 0: Fix the flipped inequality from the demo ----
-def is_tall_enough(height_cm):
-    # 📝 TODO: fix the comparison -- riders need to be AT LEAST 120cm
-    return height_cm <= 120
+# ---- TASK 0: same bug category as the demo, different function ----
+def is_old_enough_to_vote(age):
+    # 📝 TODO: fix the comparison -- voters need to be AT LEAST 18
+    return age <= 18
 
 
-print(f"150cm rider allowed: {is_tall_enough(150)}")
+print(f"21-year-old can vote: {is_old_enough_to_vote(21)}")
 
 
 # ---- TASK: turn a hardcoded greeting into a reusable function ----

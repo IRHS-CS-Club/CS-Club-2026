@@ -5,11 +5,12 @@ Goal: Sort a messy list of arcade scores correctly.
 
 print("=== Arcade High-Score Board ===")
 
-# ---- TASK 0: Fix the flipped sort direction from the demo ----
-scores = [42, 891, 7, 340, 99]
-# 📝 TODO: add reverse=True so the highest score comes first
-leaderboard = sorted(scores)
-print(f"Fixed leaderboard (highest first): {leaderboard}")
+# ---- TASK 0: same bug category as the demo, opposite direction ----
+# In golf, the LOWEST score wins -- this leaderboard should NOT be reversed.
+golf_scores = [72, 68, 75, 70]
+# 📝 TODO: remove reverse=True so the lowest (best) score comes first
+golf_leaderboard = sorted(golf_scores, reverse=True)
+print(f"Fixed golf leaderboard (lowest first): {golf_leaderboard}")
 
 raw_scores = [340, 12, 9981, 250, 77, 4200, 15]
 

@@ -5,14 +5,14 @@ Goal: Build an RPG stat calculator using variables and math operators.
 
 print("=== RPG Stat Calculator ===")
 
-# ---- TASK 0: Fix the order-of-operations bug from the demo ----
-# Intent: (base_damage + crit_bonus) * crit_multiplier
-base_damage = 10
-crit_bonus = 5
-crit_multiplier = 2
+# ---- TASK 0: same bug category as the demo, different formula ----
+# Intent: (base_points + bonus_rounds) * multiplier
+base_points = 8
+bonus_rounds = 2
+multiplier = 3
 # 📝 TODO: add parentheses so the addition happens before the multiplication
-total_damage = base_damage + crit_bonus * crit_multiplier
-print(f"Fixed total damage: {total_damage}")
+team_score = base_points + bonus_rounds * multiplier
+print(f"Fixed team score: {team_score}")
 
 # ---- TASK 1: Double the starting gold, then add a 50 bonus ----
 # PSEUDOCODE:

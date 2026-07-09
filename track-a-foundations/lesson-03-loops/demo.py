@@ -16,8 +16,6 @@ Run as-is.
 
 print("=== The Infinite Loop Bug ===")
 
-# BUG: the loop condition depends on `count`, but nothing inside the loop
-# body ever changes `count`. The condition never becomes False.
 print("Simulating the broken loop with a safety cap of 10 prints:")
 count = 0
 safety_cap = 0

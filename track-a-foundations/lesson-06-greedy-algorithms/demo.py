@@ -28,7 +28,6 @@ normal_coins = [25, 10, 5, 1]
 print(f"Amount 41 with {normal_coins}: {greedy_coin_count(41, normal_coins)} coins")
 print("Greedy gives 25+10+5+1 = 4 coins. That IS the true minimum. Greedy wins!")
 
-# BUG: this coin system doesn't guarantee greedy is optimal.
 weird_coins = [40, 35, 1]
 amount = 70
 greedy_result = greedy_coin_count(amount, weird_coins)

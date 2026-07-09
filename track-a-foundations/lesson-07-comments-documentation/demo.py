@@ -12,8 +12,6 @@ Run as-is.
 
 print("=== Comments That Repeat The Code ===")
 
-# BUG: every comment below just restates the line it's on. Delete them and
-# the code is exactly as clear -- the comments add zero information.
 x = 5  # sets x to 5
 x = x + 1  # adds 1 to x
 print(x)  # prints x

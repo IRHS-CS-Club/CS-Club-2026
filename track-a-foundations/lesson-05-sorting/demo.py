@@ -13,8 +13,6 @@ print("=== Arcade Leaderboard ===")
 
 scores = [42, 891, 7, 340, 99]
 
-# BUG: the leaderboard should show the HIGHEST score first, but sorted()
-# defaults to ascending order -- reverse=True was never set.
 leaderboard = sorted(scores)
 
 print(f"Leaderboard (highest first): {leaderboard}")

@@ -5,13 +5,13 @@ Goal: Practice checking AI-generated code against the actual requirement.
 
 print("=== AI Code Checkpoint ===")
 
-# ---- TASK 0: Fix the flipped inequality from the demo ----
-def qualifies_for_free_shipping(cart_total):
-    # 📝 TODO: fix the comparison -- free shipping is for orders $50 and OVER
-    return cart_total < 50
+# ---- TASK 0: same bug category as the demo, different function ----
+def bonus_xp_eligible(player_level):
+    # 📝 TODO: fix the comparison -- bonus XP is for level 20 and ABOVE
+    return player_level < 20
 
 
-print(f"$75 order free shipping: {qualifies_for_free_shipping(75)}")
+print(f"Level 25 gets bonus XP: {bonus_xp_eligible(25)}")
 
 
 # ---- TASK: an AI wrote this against the requirement "double the reward

@@ -1,38 +1,38 @@
 """
 Lesson 2: Conditionals, Inputs, & Outputs
-Goal: Build a movie rating checker with if/elif/else.
+Goal: Build a speed camera fine calculator with if/elif/else.
 """
 
-print("=== Movie Rating Checker ===")
+print("=== Speed Camera Fine Calculator ===")
 
-age_input = "20"  # pretend this came from input("Enter your age: ")
-# 📝 TODO: convert age_input to an integer
-age = 0
+over_limit_input = "35"  # pretend this came from input("km/h over the limit: ")
+# 📝 TODO: convert over_limit_input to an integer
+over_limit = 0
 
 # ---- TASK: check the MOST restrictive condition first! ----
 # PSEUDOCODE:
-#   if age is over 19: rating = "R"
-#   otherwise, if age is over 13: rating = "PG-13"
-#   otherwise: rating = "G"
+#   if over_limit is over 30: fine = "Severe"
+#   otherwise, if over_limit is over 10: fine = "Moderate"
+#   otherwise: fine = "Warning"
 # 📝 TODO: fill in the conditions, in the correct order (strictest first!)
 if False:  # replace False with the correct condition
-    rating = "R"
+    fine = "Severe"
 elif False:  # replace False with the correct condition
-    rating = "PG-13"
+    fine = "Moderate"
 else:
-    rating = "G"
+    fine = "Warning"
 
-print(f"Age {age} is rated for: {rating}")
+print(f"{over_limit} km/h over the limit -> {fine}")
 
 
 # ==== EXTENSION: The Easter Egg ====
 # Add one more branch that only fires for a secret password, hidden among
-# the normal age checks.
+# the normal checks.
 #
 # PSEUDOCODE:
 #   ask for a password
 #   if password matches "cs-club-secret": print a hidden joke
-#   otherwise: run the normal rating logic above
+#   otherwise: run the normal fine logic above
 
 secret_password = "cs-club-secret"
 typed_password = "cs-club-secret"  # pretend this came from input()
@@ -42,4 +42,4 @@ if False:  # replace False with the correct condition
     print("🥚 You found the secret! Why did the loop break up with the array? "
           "It needed some space!")
 else:
-    print(f"No easter egg here — just a regular {rating} rated movie.")
+    print(f"No easter egg here — just a regular {fine} fine.")

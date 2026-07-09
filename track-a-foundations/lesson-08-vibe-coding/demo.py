@@ -14,9 +14,6 @@ print("=== Free Shipping Checker ===")
 
 
 def qualifies_for_free_shipping(cart_total):
-    # BUG: an AI assistant wrote this for "free shipping on orders $50 and
-    # over," but flipped the inequality -- it grants free shipping to
-    # orders UNDER $50 instead.
     return cart_total < 50
 
 

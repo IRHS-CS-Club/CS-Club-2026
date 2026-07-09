@@ -17,11 +17,6 @@ base_damage = 10
 crit_bonus = 5
 crit_multiplier = 2
 
-# BUG: intent is (base_damage + crit_bonus) * crit_multiplier -- add the
-# crit bonus, THEN double the total for a critical hit. Without the
-# parentheses, Python multiplies crit_bonus by crit_multiplier first
-# (order of operations), so the bonus never gets the multiplier applied
-# to the sum the way the formula intended.
 total_damage = base_damage + crit_bonus * crit_multiplier
 
 print(f"Total damage: {total_damage}")
