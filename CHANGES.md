@@ -89,3 +89,48 @@ You're right — confirmed by reading the files. Root cause:
 
 Want me to generate `challenge.py` for all 8 Track B lessons?
 
+
+# 2026-07-09T19:44:50.124Z
+
+Yes, mostly — one real mismatch, in Track A this time.
+
+- **Track A matches, except for one thing:** your plan is *whiteboard → show it fail → they fix it → next section*. But `syntax_trap.py` currently doesn't stop at "it fails" — it already reveals the fix inline (`# [💡 THE FIX]: ... fixed = int(raw_score) * 2`) before they've touched anything. If you run that file live, the fix is already on screen before you even ask them to try. To match what you described, the demo needs to end right after the trap fires + you explain *why* on the whiteboard, and the fix-it task should move into `fill_in_the_blanks.py` as its first task (same broken pattern, blanked out, TODO to correct it) — that becomes the thing they do before "next section" (the rest of the workshop + extension).
+
+- **Track B now matches, with the `challenge.py` addition I proposed:** whiteboard explain time complexity referencing `master_solution.py` → they run it themselves (it already works standalone, no changes needed there) → then they need their own problem to independently apply it to, which is the missing `challenge.py` piece.
+
+So two changes needed:
+1. **Track A** (edit existing files, all 8 lessons): trim the reveal out of `syntax_trap.py`, add a "Task 0: fix the trap you just saw" block to the top of `fill_in_the_blanks.py`.
+2. **Track B** (new file, all 8 lessons): add `challenge.py` — problem stub, no solution — for independent practice after they've run `master_solution.py`.
+
+Want me to implement both?
+
+
+# 2026-07-09T20:25:58.519Z
+
+Now trimming each `demo.py` to stop right after the trap fires, and adding a "Task 0: fix it" to each `fill_in_the_blanks.py`.
+
+
+# 2026-07-09T20:26:57.649Z
+
+Now lesson 6.
+
+
+# 2026-07-09T20:27:26.136Z
+
+Now lesson 8.
+
+
+# 2026-07-09T20:30:11.067Z
+
+Now updating the README to reflect the file renames and `challenge.py` addition, then verifying everything.
+
+
+# 2026-07-09T20:30:20.080Z
+
+Now full verification pass across every file.
+
+
+# 2026-07-09T20:30:40.759Z
+
+All 8 `master_solution.py` files still produce correct output, and all 8 `challenge.py` stubs run cleanly (print `None` since `solve()` is unimplemented — expected, no crashes). Let's confirm the final tree and diff.
+
