@@ -1,0 +1,19 @@
+{
+  "name": "CS Club 2026",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
+        "editor.formatOnSave": false
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}
