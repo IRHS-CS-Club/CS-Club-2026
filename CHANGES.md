@@ -147,3 +147,13 @@ All refinements are in and verified:
 
 Nothing staged or committed yet — let me know when you want that.
 
+
+# 2026-07-09T20:40:27.006Z
+
+Now full verification pass.
+
+
+# 2026-07-09T20:40:38.475Z
+
+All 8 demos run correctly and demonstrate their bugs as intended. Let's diff-check `git status` and clean up.
+
