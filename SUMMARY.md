@@ -1,11 +1,21 @@
-# 2026-07-09T21:02:46.091Z
+# 2026-07-09T21:09:03.532Z
 
-Confirmed `ANSWER_KEY.md` is correctly ignored — it doesn't even show up in `git status`, and won't be committed or pushed.
+Line-by-line:
 
-**Summary:**
-1. Removed every inline `# BUG: ...` explanation from `demo.py` — the code still runs and shows the wrong output (that's the visible symptom the class investigates together), but the diagnosis is gone from the file itself. All 8 explanations now live in `track-a-foundations/ANSWER_KEY.md`, with exact line-number references, gitignored so it stays local to you and never reaches the repo.
-2. Fixed the demo/Task-0 overlap for lessons 1, 2, 4, 5, and 8 — each now uses a different domain, variable names, and numbers than its `demo.py` (team score vs. RPG damage, speed-fine tiers vs. movie rating, voting age vs. ride height, golf vs. arcade leaderboard, bonus XP vs. free shipping), while testing the identical underlying bug pattern. Lessons 3, 6, and 7 were already sufficiently separated, so I left those as-is.
+- **Lines 18-19**: defines `is_tall_enough(height_cm)`, which returns `height_cm <= 120` — this is the bug (flipped inequality), but nothing in the file says so.
+- **Line 22**: `riders = [110, 125, 90, 150]` — four sample heights.
+- **Lines 23-24**: loops over each rider, calls the function, and prints the result.
+- **Line 26**: a hardcoded sentence flagging the mismatch for whoever's watching.
 
-Verified: all files `py_compile` clean, every `demo.py` still reproduces its bug's symptom correctly.
+Running it produces:
+```
+Height 110cm -> allowed: True
+Height 125cm -> allowed: False
+Height 90cm -> allowed: True
+Height 150cm -> allowed: False
+A 150cm rider should be allowed. The function says False instead!
+```
 
-Nothing staged or committed — let me know when you want it pushed.
+The real rule should be "riders need to be **at least** 120cm to ride" (`height_cm >= 120`). The code instead checks `<= 120`, so it's backwards: it lets *short* riders (110, 90) through and rejects the *tall* ones (125, 150) — the exact opposite of the safety rule. Because that logic is buried inside the function's `return`, you can't spot the flip just by looking at the `print` calls in the loop — you have to actually open the function body, which is the point of the lesson (Lines 9-10 in the docstring set that up): a function hides its internals from the caller, so a wrong `return` is invisible until someone reads it.
+
+The file stops right after line 26 — no fix, no explanation — so you narrate the "why" verbally, and the actual diagnosis lives in the gitignored `track-a-foundations/ANSWER_KEY.md` for your own reference.
