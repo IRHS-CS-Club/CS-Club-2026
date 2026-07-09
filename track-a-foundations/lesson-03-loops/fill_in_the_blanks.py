@@ -1,11 +1,6 @@
 """
-WORKSHOP (35 min) — Lesson 3: Introduction to Loops
+Lesson 3: Introduction to Loops
 Goal: Print a countdown using a while loop, without freezing the terminal.
-
-SYNTAX CHEAT SHEET:
-while condition:      keeps running as long as condition is True
-    ...body...
-    counter += 1       ALWAYS update the loop variable, or it never stops!
 """
 
 print("=== Rocket Launch Countdown ===")
@@ -25,7 +20,7 @@ while False:
 print("Liftoff!")
 
 
-# ==== EXTENSION (Low-Stress): The Loading Bar ====
+# ==== EXTENSION: The Loading Bar ====
 # Use a loop + time.sleep() to animate a fake "Loading..." bar.
 #
 # PSEUDOCODE:

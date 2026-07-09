@@ -1,12 +1,6 @@
 """
-WORKSHOP (35 min) — Lesson 2: Conditionals, Inputs, & Outputs
+Lesson 2: Conditionals, Inputs, & Outputs
 Goal: Build a movie rating checker with if/elif/else.
-
-SYNTAX CHEAT SHEET:
-if condition:      first check
-elif condition:    only checked if the above was False
-else:              runs if nothing above matched
-Comparisons: > < >= <= == !=
 """
 
 print("=== Movie Rating Checker ===")
@@ -31,7 +25,7 @@ else:
 print(f"Age {age} is rated for: {rating}")
 
 
-# ==== EXTENSION (Low-Stress): The Easter Egg ====
+# ==== EXTENSION: The Easter Egg ====
 # Add one more branch that only fires for a secret password, hidden among
 # the normal age checks.
 #

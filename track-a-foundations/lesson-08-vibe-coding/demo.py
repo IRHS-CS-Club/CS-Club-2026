@@ -1,17 +1,27 @@
 """
-HUDDLE DEMO (10 min) — Lesson 8: Vibe Coding Tips & Tricks
-Instructor projects this file and runs it live. No edits needed.
+Lesson 8: Vibe Coding Tips & Tricks
+
+Syntax covered (on top of Lessons 1-7):
+  AI-generated code can run without crashing and still be WRONG -- reading
+    every condition and comparison it writes is not optional, since a
+    flipped inequality won't throw an error, it'll just quietly return
+    the wrong answer.
+
+Run as-is.
 """
 
-print("=== The Prompt Blindness Trap ===")
+print("=== Free Shipping Checker ===")
 
-# Imagine you already wrote this variable earlier in your script...
-player_hp = 100
 
-# 🔥 THE TRAP: you asked an AI "write code to reduce hp by 10 and print it"
-# and pasted the answer in WITHOUT checking it matches your existing
-# variable name. The AI guessed a plausible name, but guessed wrong.
-try:
-    exec("hp = hp - 10\nprint(hp)")
-except NameError as e:
-    print(f"💥 CRASH: {e}")
+def qualifies_for_free_shipping(cart_total):
+    # BUG: an AI assistant wrote this for "free shipping on orders $50 and
+    # over," but flipped the inequality -- it grants free shipping to
+    # orders UNDER $50 instead.
+    return cart_total < 50
+
+
+orders = [30, 50, 75, 12]
+for total in orders:
+    print(f"Order ${total} -> free shipping: {qualifies_for_free_shipping(total)}")
+
+print("A $75 order should qualify. The function says False instead!")

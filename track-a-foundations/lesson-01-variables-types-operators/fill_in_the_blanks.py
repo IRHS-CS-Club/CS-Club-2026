@@ -1,21 +1,18 @@
 """
-WORKSHOP (35 min) — Lesson 1: Variables, Types, & Operators
+Lesson 1: Variables, Types, & Operators
 Goal: Build an RPG stat calculator using variables and math operators.
-
-SYNTAX CHEAT SHEET:
-Variables: name = value
-Operators: + (add)  - (sub)  * (mult)  / (div)  ** (power)
-Casting:   int("10") turns a string into a number
 """
 
 print("=== RPG Stat Calculator ===")
 
-# ---- TASK 0: Fix the trap from the demo ----
-# You just saw raw_score * 2 give "5050" instead of 100. Fix it here.
-raw_score = "50"
-# 📝 TODO: convert raw_score to an int before doubling it
-doubled = raw_score * 2
-print(f"Fixed doubled score: {doubled}")
+# ---- TASK 0: Fix the order-of-operations bug from the demo ----
+# Intent: (base_damage + crit_bonus) * crit_multiplier
+base_damage = 10
+crit_bonus = 5
+crit_multiplier = 2
+# 📝 TODO: add parentheses so the addition happens before the multiplication
+total_damage = base_damage + crit_bonus * crit_multiplier
+print(f"Fixed total damage: {total_damage}")
 
 # ---- TASK 1: Double the starting gold, then add a 50 bonus ----
 # PSEUDOCODE:
@@ -44,7 +41,7 @@ next_level = 0
 print(f"Next Level: {next_level}")
 
 
-# ==== EXTENSION (Low-Stress): The Secret Message ====
+# ==== EXTENSION: The Secret Message ====
 # Multiplying a SPACE by a number creates instant indentation.
 # Try building your own terminal art with just * and +.
 #

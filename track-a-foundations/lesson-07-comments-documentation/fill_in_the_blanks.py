@@ -1,5 +1,5 @@
 """
-WORKSHOP (35 min) — Lesson 7: Comments & Documenting Code
+Lesson 7: Comments & Documenting Code
 Goal: Rewrite bad "what" comments as good "why" comments.
 
 RULE OF THUMB: if a comment could be deleted and the code still explains
@@ -25,7 +25,7 @@ else:
     print(f"Room for {inventory_limit - current_items} more items.")
 
 
-# ==== EXTENSION (Low-Stress): The Mystery Code Exchange ====
+# ==== EXTENSION: The Mystery Code Exchange ====
 # Swap this function with a partner AFTER deleting the function's name and
 # all its comments below. Can they guess what it does just from reading the
 # code itself? If not, the code (not the comments) needs better naming.

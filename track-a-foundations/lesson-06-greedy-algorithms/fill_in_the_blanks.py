@@ -1,10 +1,6 @@
 """
-WORKSHOP (35 min) — Lesson 6: Algorithms II — Greedy Method
+Lesson 6: Algorithms II — Greedy Method
 Goal: Use a greedy strategy to pack the most valuable loot into a bag.
-
-SYNTAX CHEAT SHEET:
-sorted(list, key=..., reverse=True)   sorts by a custom rule, biggest first
-for item in list: ...                 loop over each item
 """
 
 print("=== Loot Bag Packer ===")
@@ -46,8 +42,8 @@ print(f"Bag contents: {bag}")
 print(f"Total weight used: {current_weight}/{max_weight}")
 
 
-# ==== EXTENSION (Low-Stress): Try Breaking It ====
+# ==== EXTENSION: Try Breaking It ====
 # Greedy-by-ratio is a heuristic, not a guarantee (just like the Coin Change
-# Trap!). Try changing one item's weight or value above and see if the bag
+# bug). Try changing one item's weight or value above and see if the bag
 # you get still "feels" like the best possible choice, or if a smarter
 # combination could beat it.

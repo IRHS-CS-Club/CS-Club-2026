@@ -1,15 +1,18 @@
 """
-WORKSHOP (35 min) — Lesson 4: Functions & Code Quality
+Lesson 4: Functions & Code Quality
 Goal: Wrap reusable logic in a function so it can run multiple times cleanly.
-
-SYNTAX CHEAT SHEET:
-def function_name(parameter):     defines a function
-    ...body...
-    return value                  hands a value back to the caller
-function_name(argument)           calls the function
 """
 
 print("=== Custom Greeting Engine ===")
+
+
+# ---- TASK 0: Fix the flipped inequality from the demo ----
+def is_tall_enough(height_cm):
+    # 📝 TODO: fix the comparison -- riders need to be AT LEAST 120cm
+    return height_cm <= 120
+
+
+print(f"150cm rider allowed: {is_tall_enough(150)}")
 
 
 # ---- TASK: turn a hardcoded greeting into a reusable function ----
@@ -36,7 +39,7 @@ print(greet("Rivera", True))
 print(greet("Chen", False))
 
 
-# ==== EXTENSION (Low-Stress): Reuse Without Rewriting ====
+# ==== EXTENSION: Reuse Without Rewriting ====
 # Now that greet() exists, add a NEW parameter for a custom title
 # ("Captain", "Doctor", etc.) without touching the print lines below.
 #

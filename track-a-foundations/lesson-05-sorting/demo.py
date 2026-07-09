@@ -1,14 +1,21 @@
 """
-HUDDLE DEMO (10 min) — Lesson 5: Algorithms I — Sorting
-Instructor projects this file and runs it live. No edits needed.
+Lesson 5: Algorithms I — Sorting
+
+Syntax covered (on top of Lessons 1-4):
+  sorted(list)                 returns a NEW list, sorted ascending (low to high)
+  sorted(list, reverse=True)    sorted descending (high to low)
+  list[-1]                      last element    list[-3:]  last three elements
+
+Run as-is.
 """
 
-print("=== The Mutating vs Returning Trap ===")
+print("=== Arcade Leaderboard ===")
 
-scores = [42, 7, 99, 15]
+scores = [42, 891, 7, 340, 99]
 
-# 🔥 THE TRAP: .sort() sorts the list IN PLACE and returns None.
-# Printing the return value prints... None.
-print(f"print(scores.sort()) -> {scores.sort()}")
-print("Expected the sorted list, got None instead!")
-print(f"But scores itself IS sorted now: {scores}")
+# BUG: the leaderboard should show the HIGHEST score first, but sorted()
+# defaults to ascending order -- reverse=True was never set.
+leaderboard = sorted(scores)
+
+print(f"Leaderboard (highest first): {leaderboard}")
+print("Expected the biggest score first, got the smallest score first!")
