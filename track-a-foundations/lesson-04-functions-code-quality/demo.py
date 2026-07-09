@@ -19,14 +19,3 @@ try:
     print(f"Outside the function, result = {result}")
 except NameError as e:
     print(f"\n💥 CRASH: {e}")
-    print("[💡 WHY]: variables created INSIDE a function are local to that "
-          "function. Once the function finishes, they disappear.")
-
-# [💡 THE FIX]: return the value you need, and store it outside.
-def roll_dice_fixed():
-    result = 6
-    return result  # <-- hand the value back to whoever called us
-
-
-final_result = roll_dice_fixed()
-print(f"Fixed: final_result = {final_result}  <-- works because we returned it")

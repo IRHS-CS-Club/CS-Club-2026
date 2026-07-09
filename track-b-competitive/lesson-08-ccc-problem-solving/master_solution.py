@@ -1,6 +1,9 @@
 """
 Track B — Lesson 8: CCC Problem Solving Tips
 
+Complexity: O(N^2) brute force for Subtask 1 (small N), O(N) full solve for
+Subtask 2 (large N) -- matching the solution's complexity to each subtask's
+constraints is the whole point of this lesson.
 Gap-Filler: CCC problems are usually split into subtasks with increasing
 constraints (e.g. Subtask 1: N <= 10, Subtask 2: N <= 10^5). Each subtask is
 graded independently. A brute-force solution that only handles the smallest

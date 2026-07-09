@@ -1,6 +1,7 @@
 """
 Track B — Lesson 5: Graph Theory & Dijkstra's Algorithm
 
+Complexity: O((V + E) log V) using a binary heap as the priority queue.
 Gap-Filler: represent the graph as an adjacency list (dict of node -> list
 of (neighbor, weight)), and use a min-heap (heapq) as a priority queue so we
 always expand the closest unvisited node next — O((V + E) log V) instead of

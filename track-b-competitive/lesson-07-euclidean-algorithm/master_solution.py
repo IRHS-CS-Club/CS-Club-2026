@@ -1,6 +1,7 @@
 """
 Track B — Lesson 7: Divisibility & The Euclidean Algorithm
 
+Complexity: O(log(min(a, b))).
 Gap-Filler: gcd(a, b) == gcd(b, a % b), and gcd(a, 0) == a. Each step at
 least halves the smaller number (in the worst case, Fibonacci-adjacent
 inputs), giving O(log(min(a, b))) instead of checking every divisor up to

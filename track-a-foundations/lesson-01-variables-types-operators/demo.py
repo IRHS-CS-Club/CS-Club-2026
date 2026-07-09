@@ -15,10 +15,3 @@ doubled = raw_score * 2
 
 print(f"raw_score * 2 = {doubled}")
 print("Expected 100, got '5050' instead!")
-
-# [💡 WHY]: Python's * operator means something different depending on type.
-#   int * int   -> multiplication      (50 * 2 == 100)
-#   str * int   -> repeats the text    ("50" * 2 == "5050")
-# The fix: convert the string to a number FIRST with int(), then multiply.
-fixed = int(raw_score) * 2
-print(f"int(raw_score) * 2 = {fixed}  <-- this is what we actually wanted")

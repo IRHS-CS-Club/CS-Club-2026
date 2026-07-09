@@ -1,6 +1,7 @@
 """
 Track B — Lesson 1: Advanced Variables & Internal Data Structures
 
+Complexity: O(N + M) — hash set lookups replace linear list scans.
 Gap-Filler: lists are contiguous arrays -> `x in list` is O(N) (scans every
 element). Sets are hash tables -> `x in set` is O(1) average case. At CCC
 scale (N up to ~10^5-10^6), using `in` on a list inside a loop silently turns
@@ -14,15 +15,17 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "utils"))
 from template_io import read_int, read_ints  # noqa: E402
 
 
-def count_matches_slow(values: list[int], targets: list[int]) -> int:
-    """O(N * M): `in` on a list re-scans the whole list every call."""
-    return sum(1 for t in targets if t in values)
-
-
-def count_matches_fast(values: list[int], targets: list[int]) -> int:
-    """O(N + M): build the hash set once, then O(1) lookups."""
+def count_matches(values: list[int], targets: list[int]) -> int:
+    """O(N + M): build the hash set once, then O(1) lookups per target."""
     value_set = set(values)
     return sum(1 for t in targets if t in value_set)
+
+
+# ---- NAIVE APPROACH (commented out -- this is what fails the judge) ----
+# def count_matches_slow(values: list[int], targets: list[int]) -> int:
+#     return sum(1 for t in targets if t in values)   # `in` on a list is O(N)
+# WHY IT FAILS: O(N * M) total. At N = M = 10^5 that's ~10^10 operations --
+# far past the ~10^8 ops/sec budget, guaranteed Time Limit Exceeded.
 
 
 # ---- THE TRAP: mutating a list while iterating over it ----
@@ -43,7 +46,7 @@ def main() -> None:
     m = read_int()
     targets = read_ints()
 
-    print(count_matches_fast(values, targets))
+    print(count_matches(values, targets))
     print(remove_evens(values))
 
 

@@ -28,8 +28,3 @@ greedy_result = greedy_coin_count(amount, weird_coins)
 print(f"\nAmount {amount} with {weird_coins}: {greedy_result} coins (greedy)")
 print("Greedy grabs 40, then has 30 left -> thirty 1-coins = 31 coins total!")
 print("But 35 + 35 = 70 using only 2 coins. Greedy MISSED the better answer.")
-
-# [💡 WHY]: greedy only works when the coin system has a special property
-# (each coin is "big enough" relative to the others). It's a shortcut, not
-# a guarantee — always check whether greedy is provably correct for YOUR
-# specific problem before trusting it.

@@ -15,13 +15,3 @@ try:
     exec("hp = hp - 10\nprint(hp)")
 except NameError as e:
     print(f"💥 CRASH: {e}")
-    print("[💡 WHY]: the AI-generated code used `hp`, but YOUR script uses "
-          "`player_hp`. Pasted code doesn't know your variable names unless "
-          "you told it, or unless you check the names match before running.")
-
-# [💡 THE FIX]: always read AI-generated code line-by-line before running
-# it, and rename its variables to match what you already have.
-player_hp = player_hp - 10
-print(f"Fixed: player_hp = {player_hp}")
-
-print("\nRule of thumb: never paste code you haven't read.")

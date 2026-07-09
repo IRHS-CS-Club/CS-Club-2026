@@ -19,14 +19,3 @@ else:
 
 print(f"Age {age} -> rated for: {rating}")
 print("Expected R, got PG-13 instead!")
-
-# [💡 WHY]: elif chains stop at the FIRST True condition, top to bottom.
-# Fix: check the MOST restrictive / narrowest condition first.
-if age > 19:
-    rating = "R"
-elif age > 13:
-    rating = "PG-13"
-else:
-    rating = "G"
-
-print(f"Fixed order -> rated for: {rating}  <-- correct!")

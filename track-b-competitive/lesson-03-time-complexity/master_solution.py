@@ -1,6 +1,7 @@
 """
 Track B — Lesson 3: Time Complexity & Efficient Looping
 
+Complexity: O(N) — a seen-set replaces the nested loop.
 Gap-Filler: judges allow roughly 10^8 simple operations per second. An
 O(N^2) algorithm on N = 10^5 is ~10^10 operations -> guaranteed TLE. The fix
 is almost always trading a nested loop for a frequency array / hash map that
@@ -14,17 +15,18 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "utils"))
 from template_io import read_int, read_ints  # noqa: E402
 
 
-# ---- THE TRAP: O(N^2) pair-sum check ----
-# def has_pair_with_sum_slow(values: list[int], target: int) -> bool:
+# ---- NAIVE APPROACH (commented out -- this is what fails the judge) ----
+# def has_pair_with_sum_naive(values: list[int], target: int) -> bool:
 #     for i in range(len(values)):
 #         for j in range(len(values)):
 #             if i != j and values[i] + values[j] == target:
 #                 return True
 #     return False
-# At N = 10^5 this is ~10^10 comparisons -> Time Limit Exceeded on any judge.
+# WHY IT FAILS: O(N^2). At N = 10^5 this is ~10^10 comparisons -- Time Limit
+# Exceeded on any judge that enforces the ~10^8 ops/sec budget.
 
 
-def has_pair_with_sum_fast(values: list[int], target: int) -> bool:
+def has_pair_with_sum(values: list[int], target: int) -> bool:
     """O(N): frequency/seen-set replaces the inner loop entirely."""
     seen: set[int] = set()
     for v in values:
@@ -51,7 +53,7 @@ def main() -> None:
     values = read_ints()
     target = read_int()
 
-    print(has_pair_with_sum_fast(values, target))
+    print(has_pair_with_sum(values, target))
     print(frequency_array(values, max(values) if values else 0))
 
 

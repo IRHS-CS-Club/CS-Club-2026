@@ -10,6 +10,13 @@ Casting:   int("10") turns a string into a number
 
 print("=== RPG Stat Calculator ===")
 
+# ---- TASK 0: Fix the trap from the demo ----
+# You just saw raw_score * 2 give "5050" instead of 100. Fix it here.
+raw_score = "50"
+# 📝 TODO: convert raw_score to an int before doubling it
+doubled = raw_score * 2
+print(f"Fixed doubled score: {doubled}")
+
 # ---- TASK 1: Double the starting gold, then add a 50 bonus ----
 # PSEUDOCODE:
 #   final_gold = (starting_gold * 2) + 50

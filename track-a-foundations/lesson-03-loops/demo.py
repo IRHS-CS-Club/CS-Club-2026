@@ -26,11 +26,3 @@ while count < 5 and safety_cap < 10:
     print(f"  count is still: {count}  (never increments!)")
     safety_cap += 1  # this line ONLY exists to stop the demo, not a real fix
 print("...and it would keep going forever without the cap. That's a crash.")
-
-# [💡 THE FIX]: always update the loop variable inside the loop body.
-print("\nFixed version:")
-count = 0
-while count < 5:
-    print(f"  count is now: {count}")
-    count += 1  # <-- this line is what was missing
-print("Loop finished cleanly because count eventually reached 5.")

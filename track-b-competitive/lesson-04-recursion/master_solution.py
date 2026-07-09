@@ -1,6 +1,7 @@
 """
 Track B — Lesson 4: Recursion
 
+Complexity: factorial is O(N); fib_memo is O(N) (memoized) vs O(2^N) naive.
 Gap-Filler: every recursive call pushes a new frame onto the call stack.
 Python's default recursion limit is ~1000 frames. A correct recursive
 function needs (1) a base case that stops the recursion and (2) each call
@@ -33,15 +34,26 @@ def fib_memo(n: int, cache: dict[int, int] | None = None) -> int:
     return cache[n]
 
 
+# ---- NAIVE APPROACH (commented out -- exponential blowup without memo) ----
+# def fib_naive(n):
+#     if n <= 1:
+#         return n
+#     return fib_naive(n - 1) + fib_naive(n - 2)
+# WHY IT FAILS: O(2^N) -- the same subproblems get recomputed exponentially
+# many times. fib_naive(40) alone takes billions of calls; a judge with
+# N up to 10^5 makes this instantly Time Limit Exceeded.
+
+
 # ---- THE TRAP: an unreachable/missing base case ----
-# def countdown_broken(n):
+# def countdown_naive(n):
 #     print(n)
-#     countdown_broken(n - 1)          # BUG: no base case at all, or a base
+#     countdown_naive(n - 1)           # BUG: no base case at all, or a base
 #                                       # case like `if n == 0: return` that
 #                                       # n never actually hits (e.g. n starts
 #                                       # negative, or decrements by 2 and
 #                                       # skips over 0).
-#                                       # Result: RecursionError, stack overflow.
+# WHY IT FAILS: RecursionError -- the call stack overflows because nothing
+# ever stops the recursion.
 def countdown_fixed(n: int) -> None:
     if n < 0:  # base case reachable from ANY starting n, not just n == 0
         return
@@ -49,23 +61,10 @@ def countdown_fixed(n: int) -> None:
     countdown_fixed(n - 1)
 
 
-def demo_stack_overflow() -> None:
-    """Shows what the trap actually looks like, safely caught."""
-
-    def broken(n):
-        return broken(n - 1)  # no base case -> recurses forever
-
-    try:
-        broken(0)
-    except RecursionError as e:
-        print(f"Caught the trap: {type(e).__name__} — missing base case")
-
-
 def main() -> None:
     n = read_int()
     print(factorial(n))
     print(fib_memo(n))
-    demo_stack_overflow()
 
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 """
 Track B — Lesson 6: Prime Numbers & Eratosthenes' Sieve
 
+Complexity: O(N log log N) for the sieve; O(sqrt(N)) for a single check.
 Gap-Filler: to find ALL primes up to N, the Sieve of Eratosthenes runs in
 O(N log log N) by crossing out multiples of each prime once, instead of
 testing every number individually. This is the standard competitive-math
