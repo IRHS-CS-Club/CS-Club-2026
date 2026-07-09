@@ -168,3 +168,32 @@ Done. Summary of what changed across all 8 Track A lessons:
 
 Verified: all files `py_compile` clean, every `demo.py` runs and reproduces its stated wrong output. Nothing staged or committed — say the word when you want it pushed.
 
+
+# 2026-07-09T20:53:56.691Z
+
+Two separate things to fix — let me explain my reasoning on the second one after I show you what I'm doing.
+
+**On the demo/Task-0 overlap**: yes, that was semi-intentional but I got the balance wrong. My idea was "show it fail → discuss on whiteboard → student immediately fixes the *exact same* code to lock in the concept." But I implemented that as a literal copy-paste of demo.py's code into Task 0 — same variable names, same numbers, same domain. That's not really an exercise, it's transcription. The fix: keep Task 0 as "fix the same *category* of bug you just watched," but use a different scenario (different domain, names, numbers) so solving it requires applying the concept, not remembering the demo's exact text. I'll do that for lessons 1, 2, 4, 5, and 8, where the overlap is real. Lessons 3, 6, and 7 already use a different scenario in the workshop than in the demo, so I'm leaving those alone.
+
+Let me start with removing the bug explanations from `demo.py` files.
+
+
+# 2026-07-09T21:00:52.238Z
+
+Now reading final line numbers for the answer key.
+
+
+# 2026-07-09T21:00:58.530Z
+
+Now writing the answer key with exact line numbers.
+
+
+# 2026-07-09T21:02:25.061Z
+
+Now full verification pass across all Track A files.
+
+
+# 2026-07-09T21:02:36.667Z
+
+All demos still fire the same visible bugs, with zero inline diagnosis now. Let's confirm the answer key is properly gitignored.
+
